@@ -38,7 +38,7 @@ spec:
 #        public_net: enable
       containers:
         - name: activiti-service-test
-          image: 172.16.217.11:5000/activiti-service-test:v1.0
+          image: 127.0.0.1:5000/activiti-service-test:v1.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
