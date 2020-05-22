@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lsdk.activiti.business.dao.mapper.TDeployMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lsdk.activiti.business.dao.entity.TDeploy">
+        <id column="id" property="id" />
+        <result column="application" property="application" />
+        <result column="busi_key" property="busiKey" />
+        <result column="process_define_id" property="processDefineId" />
+        <result column="category" property="category" />
+        <result column="name" property="name" />
+        <result column="pub_sts" property="pubSts" />
+        <result column="resource_path" property="resourcePath" />
+        <result column="version" property="version" />
+        <result column="create_date" property="createDate" />
+        <result column="update_date" property="updateDate" />
+        <result column="updator" property="updator" />
+        <result column="creator" property="creator" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, application, busi_key, process_define_id, category, name, pub_sts, resource_path, version, start_date, update_date, updator, creator
+    </sql>
+
+</mapper>

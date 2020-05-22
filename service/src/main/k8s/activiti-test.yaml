@@ -1,0 +1,54 @@
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    k8s-app: activiti-service-test
+  name: activiti-service
+  namespace: test
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: activiti-service-test
+  type: ClusterIP
+
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  labels:
+    app: activiti-service-test
+  name: activiti-service-test
+  namespace: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: activiti-service-test
+  template:
+    metadata:
+      labels:
+        app: activiti-service-test
+    spec:
+#      nodeSelector:
+#        public_net: enable
+      containers:
+        - name: activiti-service-test
+          image: 172.16.217.11:5000/activiti-service-test:v1.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              scheme: HTTP
+              path: /activiti/test
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 45
+          securityContext:
+            allowPrivilegeEscalation: false
