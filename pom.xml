@@ -114,14 +114,14 @@
     <!-- 发布maven私服 -->
     <distributionManagement>
         <repository>
-            <id>xyb</id>
-            <name>xyb-SNAPSHOTS</name>
-            <url>http://116.62.18.117:8081/repository/xyb/</url>
+            <id>lst</id>
+            <name>lst-SNAPSHOTS</name>
+            <url>http://127.0.0.1:8081/repository/xyb/</url>
         </repository>
         <snapshotRepository>
-            <id>xyb</id>
-            <name>xyb-SNAPSHOTS</name>
-            <url>http://116.62.18.117:8081/repository/xyb/</url>
+            <id>lst</id>
+            <name>lst-SNAPSHOTS</name>
+            <url>http://127.0.0.1:8081/repository/xyb/</url>
         </snapshotRepository>
     </distributionManagement>
 
